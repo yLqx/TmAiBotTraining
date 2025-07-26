@@ -1,1 +1,120 @@
 # TmAiBotTraining
+
+
+PROJECT STRUCTURE:
+trading_bot/
+├── main.py                    # Main bot entry point
+├── web_app.py                 # FastAPI web interface
+├── trading/
+│   ├── strategies.py          # Trading strategies (MA crossover, RSI)
+│   ├── risk_manager.py        # Position sizing, stop losses
+│   └── mt5_connector.py       # MetaTrader 5 connection
+├── news/
+│   ├── news_fetcher.py        # Economic calendar API
+│   └── news_filter.py         # Filter high impact events
+├── database/
+│   ├── models.py              # Database models
+│   └── trade_logger.py        # Log all trades
+├── templates/
+│   ├── dashboard.html         # Main control dashboard
+│   └── manual_trade.html      # Manual trading interface
+├── static/
+│   ├── style.css              # Dashboard styling
+│   └── dashboard.js           # Real-time updates
+└── requirements.txt           # Dependencies
+TRADING BOT FEATURES:
+
+Connect to FXTM MT5 demo account ($2M balance)
+Trade EURUSD using moving average crossover strategy
+Risk management: 1% risk per trade, stop losses, take profits
+Run continuously 24/7 with error handling
+Stop trading 30 minutes before/after high-impact news
+
+WEB INTERFACE FEATURES:
+
+Real-time bot status (running/stopped/error)
+Live trade monitoring with P&L
+Manual trade execution (BUY/SELL buttons)
+Economic news calendar display
+Performance charts (balance, win rate, trade history)
+Start/stop bot controls
+Strategy parameter adjustment
+
+NEWS AVOIDANCE:
+
+Fetch economic calendar from ForexFactory API
+Identify high-impact events (NFP, FOMC, GDP, etc.)
+Auto-pause trading 30 minutes before/after high-impact news
+Visual indicators on dashboard showing upcoming events
+
+DATABASE SCHEMA:
+python# Tables needed:
+trades = {
+    'id': 'primary key',
+    'symbol': 'EURUSD', 
+    'action': 'BUY/SELL',
+    'volume': '0.1',
+    'entry_price': '1.0855',
+    'exit_price': '1.0875', 
+    'profit': '25.50',
+    'status': 'open/closed',
+    'timestamp': 'datetime'
+}
+
+news_events = {
+    'id': 'primary key',
+    'title': 'Non-Farm Payrolls',
+    'impact': 'high/medium/low',
+    'time': 'datetime',
+    'currency': 'USD'
+}
+TECHNICAL REQUIREMENTS:
+
+Use MetaTrader5 Python package for broker connection
+FastAPI for web backend with WebSocket support
+SQLite database for trade logging
+HTML/CSS/JavaScript for dashboard
+Real-time charts using Chart.js
+Economic calendar API integration
+Error handling and logging throughout
+
+WEB DASHBOARD LAYOUT:
+┌─────────────────────────────────────────────────────────┐
+│                    AI TRADING BOT CONTROL               │
+├─────────────────┬─────────────────┬─────────────────────┤
+│   Bot Status    │  Manual Trading │     Performance     │
+│   🟢 RUNNING    │   [BUY EURUSD]  │   Balance: $2,000k  │
+│   Last: +$25    │   [SELL EURUSD] │   Profit: +$150     │
+│   [STOP BOT]    │   Size: [0.1]   │   Win Rate: 68%     │
+├─────────────────┴─────────────────┴─────────────────────┤
+│                    ECONOMIC CALENDAR                    │
+│   🔴 14:30 NFP (High) - TRADING PAUSED                 │
+│   🟡 16:00 Fed Speech (Medium) - Reduced Size          │
+├─────────────────────────────────────────────────────────┤
+│                      LIVE TRADES                       │
+│  ID │ Symbol │ Action │ Entry  │ P&L   │ Status         │
+│  01 │ EURUSD │ BUY    │ 1.0855 │ +$25  │ Open          │
+│  02 │ EURUSD │ SELL   │ 1.0840 │ +$15  │ Closed        │
+└─────────────────────────────────────────────────────────┘
+CONFIGURATION:
+
+Configurable trading parameters (risk %, lot sizes)
+News impact levels (high/medium/low)
+Trading hours and market sessions
+
+DEPLOYMENT:
+
+Environment variables for sensitive data
+Automatic restart on errors
+
+SECURITY:
+
+Never store real broker passwords in code
+Use environment variables for all sensitive data
+You can test it on Demo account only (no real money risk)
+Input validation for manual trades
+
+
+
+
+
