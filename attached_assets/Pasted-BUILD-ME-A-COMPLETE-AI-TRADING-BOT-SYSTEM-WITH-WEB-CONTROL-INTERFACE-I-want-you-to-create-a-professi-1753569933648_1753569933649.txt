@@ -1,0 +1,187 @@
+BUILD ME A COMPLETE AI TRADING BOT SYSTEM WITH WEB CONTROL INTERFACE
+I want you to create a professional AI trading bot that:
+CORE REQUIREMENTS:
+
+Python trading bot that connects to MT5 demo account (FXTM broker)
+Web dashboard to control the bot and execute manual trades
+News avoidance system that stops trading during high-impact economic events
+Database logging of all trades and performance
+Real-time updates via WebSocket
+Manual trade execution bypassing bot logic for emergency trades
+
+PROJECT STRUCTURE:
+trading_bot/
+├── main.py                    # Main bot entry point
+├── web_app.py                 # FastAPI web interface
+├── trading/
+│   ├── strategies.py          # Trading strategies (MA crossover, RSI)
+│   ├── risk_manager.py        # Position sizing, stop losses
+│   └── mt5_connector.py       # MetaTrader 5 connection
+├── news/
+│   ├── news_fetcher.py        # Economic calendar API
+│   └── news_filter.py         # Filter high impact events
+├── database/
+│   ├── models.py              # Database models
+│   └── trade_logger.py        # Log all trades
+├── templates/
+│   ├── dashboard.html         # Main control dashboard
+│   └── manual_trade.html      # Manual trading interface
+├── static/
+│   ├── style.css              # Dashboard styling
+│   └── dashboard.js           # Real-time updates
+└── requirements.txt           # Dependencies
+TRADING BOT FEATURES:
+
+Connect to FXTM MT5 demo account ($2M balance)
+Trade EURUSD using moving average crossover strategy
+Risk management: 1% risk per trade, stop losses, take profits
+Run continuously 24/7 with error handling
+Stop trading 30 minutes before/after high-impact news
+
+WEB INTERFACE FEATURES:
+
+Real-time bot status (running/stopped/error)
+Live trade monitoring with P&L
+Manual trade execution (BUY/SELL buttons)
+Economic news calendar display
+Performance charts (balance, win rate, trade history)
+Start/stop bot controls
+Strategy parameter adjustment
+
+NEWS AVOIDANCE:
+
+Fetch economic calendar from ForexFactory API
+Identify high-impact events (NFP, FOMC, GDP, etc.)
+Auto-pause trading 30 minutes before/after high-impact news
+Visual indicators on dashboard showing upcoming events
+
+DATABASE SCHEMA:
+python# Tables needed:
+trades = {
+    'id': 'primary key',
+    'symbol': 'EURUSD', 
+    'action': 'BUY/SELL',
+    'volume': '0.1',
+    'entry_price': '1.0855',
+    'exit_price': '1.0875', 
+    'profit': '25.50',
+    'status': 'open/closed',
+    'timestamp': 'datetime'
+}
+
+news_events = {
+    'id': 'primary key',
+    'title': 'Non-Farm Payrolls',
+    'impact': 'high/medium/low',
+    'time': 'datetime',
+    'currency': 'USD'
+}
+TECHNICAL REQUIREMENTS:
+
+Use MetaTrader5 Python package for broker connection
+FastAPI for web backend with WebSocket support
+SQLite database for trade logging
+HTML/CSS/JavaScript for dashboard
+Real-time charts using Chart.js
+Economic calendar API integration
+Error handling and logging throughout
+
+WEB DASHBOARD LAYOUT:
+┌─────────────────────────────────────────────────────────┐
+│                    AI TRADING BOT CONTROL               │
+├─────────────────┬─────────────────┬─────────────────────┤
+│   Bot Status    │  Manual Trading │     Performance     │
+│   🟢 RUNNING    │   [BUY EURUSD]  │   Balance: $2,000k  │
+│   Last: +$25    │   [SELL EURUSD] │   Profit: +$150     │
+│   [STOP BOT]    │   Size: [0.1]   │   Win Rate: 68%     │
+├─────────────────┴─────────────────┴─────────────────────┤
+│                    ECONOMIC CALENDAR                    │
+│   🔴 14:30 NFP (High) - TRADING PAUSED                 │
+│   🟡 16:00 Fed Speech (Medium) - Reduced Size          │
+├─────────────────────────────────────────────────────────┤
+│                      LIVE TRADES                       │
+│  ID │ Symbol │ Action │ Entry  │ P&L   │ Status         │
+│  01 │ EURUSD │ BUY    │ 1.0855 │ +$25  │ Open          │
+│  02 │ EURUSD │ SELL   │ 1.0840 │ +$15  │ Closed        │
+└─────────────────────────────────────────────────────────┘
+CONFIGURATION:
+
+Demo account connection details in environment variables
+Configurable trading parameters (risk %, lot sizes)
+News impact levels (high/medium/low)
+Trading hours and market sessions
+
+DEPLOYMENT:
+
+Set up as always-on Repl
+Use Replit's built-in database
+Environment variables for sensitive data
+Automatic restart on errors
+
+SECURITY:
+
+Never store real broker passwords in code
+Use environment variables for all sensitive data
+Demo account only (no real money risk)
+Input validation for manual trades
+
+PLEASE CREATE:
+
+Complete working Python trading bot
+Professional web interface with real-time updates
+Database integration with proper logging
+News avoidance system with economic calendar
+Manual trading capability
+Error handling and monitoring
+Clean, professional UI design
+Documentation for setup and usage
+
+START WITH:
+
+Basic MT5 connection test
+Simple moving average strategy
+Web dashboard showing bot status
+Manual BUY/SELL buttons that work
+Trade logging to database
+
+MAKE SURE EVERYTHING WORKS TOGETHER and is production-ready for 24/7 operation. The bot should be stable, professional, and ready to deploy immediately.
+
+🎯 AFTER REPLIT BUILDS IT:
+What You'll Get:
+
+✅ Complete trading bot with web interface
+✅ Professional dashboard with real-time updates
+✅ News avoidance system built-in
+✅ Manual trading controls
+✅ Database logging of all trades
+✅ Always-on hosting (24/7 operation)
+
+Next Steps After Build:
+
+Add your FXTM demo credentials to environment variables
+Test the MT5 connection
+Run the bot for 24 hours to verify stability
+Test manual trading buttons
+Check news calendar is working
+Monitor trade logging in database
+
+Expected Build Time:
+
+Replit AI: 10-15 minutes to generate all code
+Your setup time: 30 minutes to configure
+Testing: 1-2 hours to verify everything works
+
+Cost:
+
+Replit Hacker Plan: $7/month (always-on hosting)
+Total setup cost: $7/month (vs $40-60 for VPS)
+
+Advantages of Replit:
+
+No server management required
+Built-in database included
+Automatic HTTPS for web interface
+Easy deployment (one-click)
+Built-in monitoring and logs
+Collaborative editing if you need help
+
