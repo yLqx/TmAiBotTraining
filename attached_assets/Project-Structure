@@ -1,13 +1,3 @@
-BUILD ME A COMPLETE AI TRADING BOT SYSTEM WITH WEB CONTROL INTERFACE
-I want you to create a professional AI trading bot that:
-CORE REQUIREMENTS:
-
-Python trading bot that connects to MT5 demo account (FXTM broker)
-Web dashboard to control the bot and execute manual trades
-News avoidance system that stops trading during high-impact economic events
-Database logging of all trades and performance
-Real-time updates via WebSocket
-Manual trade execution bypassing bot logic for emergency trades
 
 PROJECT STRUCTURE:
 trading_bot/
@@ -106,15 +96,12 @@ WEB DASHBOARD LAYOUT:
 └─────────────────────────────────────────────────────────┘
 CONFIGURATION:
 
-Demo account connection details in environment variables
 Configurable trading parameters (risk %, lot sizes)
 News impact levels (high/medium/low)
 Trading hours and market sessions
 
 DEPLOYMENT:
 
-Set up as always-on Repl
-Use Replit's built-in database
 Environment variables for sensitive data
 Automatic restart on errors
 
@@ -122,66 +109,10 @@ SECURITY:
 
 Never store real broker passwords in code
 Use environment variables for all sensitive data
-Demo account only (no real money risk)
+You can test it on Demo account only (no real money risk)
 Input validation for manual trades
 
-PLEASE CREATE:
 
-Complete working Python trading bot
-Professional web interface with real-time updates
-Database integration with proper logging
-News avoidance system with economic calendar
-Manual trading capability
-Error handling and monitoring
-Clean, professional UI design
-Documentation for setup and usage
 
-START WITH:
 
-Basic MT5 connection test
-Simple moving average strategy
-Web dashboard showing bot status
-Manual BUY/SELL buttons that work
-Trade logging to database
-
-MAKE SURE EVERYTHING WORKS TOGETHER and is production-ready for 24/7 operation. The bot should be stable, professional, and ready to deploy immediately.
-
-🎯 AFTER REPLIT BUILDS IT:
-What You'll Get:
-
-✅ Complete trading bot with web interface
-✅ Professional dashboard with real-time updates
-✅ News avoidance system built-in
-✅ Manual trading controls
-✅ Database logging of all trades
-✅ Always-on hosting (24/7 operation)
-
-Next Steps After Build:
-
-Add your FXTM demo credentials to environment variables
-Test the MT5 connection
-Run the bot for 24 hours to verify stability
-Test manual trading buttons
-Check news calendar is working
-Monitor trade logging in database
-
-Expected Build Time:
-
-Replit AI: 10-15 minutes to generate all code
-Your setup time: 30 minutes to configure
-Testing: 1-2 hours to verify everything works
-
-Cost:
-
-Replit Hacker Plan: $7/month (always-on hosting)
-Total setup cost: $7/month (vs $40-60 for VPS)
-
-Advantages of Replit:
-
-No server management required
-Built-in database included
-Automatic HTTPS for web interface
-Easy deployment (one-click)
-Built-in monitoring and logs
-Collaborative editing if you need help
 
